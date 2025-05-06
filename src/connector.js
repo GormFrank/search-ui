@@ -287,6 +287,23 @@ function initTpl() {
 		}
 	}
 
+	if ( !notificationTriggerTemplateHTML ) {
+		if ( lang === "fr" ) {
+			notificationTriggerTemplateHTML = 
+				`<section class="alert alert-info">
+					<h2>Notification</h2>
+					<p>%[notification]</p>
+				</section>`;
+		}
+		else {
+			notificationTriggerTemplateHTML = 
+				`<section class="alert alert-info">
+					<h2>Notification</h2>
+					<p>%[notification]</p>
+				</section>`;
+		}
+	}
+
 	if ( !querySummaryTemplateHTML ) {
 		if ( lang === "fr" ) {
 			querySummaryTemplateHTML = 
@@ -387,6 +404,14 @@ function initTpl() {
 	if ( !resultsSection ) {
 		resultsSection = document.createElement( "section" );
 		resultsSection.id = resultSectionID;
+	}
+
+	// auto-create notification trigger element
+	if ( !notificationTriggerElement ) {
+		notificationTriggerElement = document.createElement( "div" );
+		notificationTriggerElement.id = "notification-trigger";
+
+		resultsSection.append( notificationTriggerElement );
 	}
 
 	// auto-create notification trigger element
