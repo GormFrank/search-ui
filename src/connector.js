@@ -332,7 +332,7 @@ function initTpl() {
 	}
 
 	if ( !qsA11yHintHTML ) {
-			if ( lang === "fr" ) {
+		if ( lang === "fr" ) {
 			qsA11yHintHTML = 
 				`<p id="sr-qs-hint" class="hidden">
 					Appuyez sur les touches de direction orientées vers le haut et vers le bas pour vous déplacer dans les suggestions de 
@@ -413,8 +413,8 @@ function initTpl() {
 			searchBoxElement.setAttribute( 'aria-controls', 'suggestions' );
 
 			// Add accessibility instructions after query suggestions
-			suggestionsElement.insertAdjacentHTML('afterEnd', qsA11yHintHTML)
-			suggestionsElement.setAttribute( "aria-describedby", "sr-qs-hint" )
+			suggestionsElement.insertAdjacentHTML('afterEnd', qsA11yHintHTML);
+			suggestionsElement.setAttribute( "aria-describedby", "sr-qs-hint" );
 		}
 	}
 
