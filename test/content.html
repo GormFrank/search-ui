@@ -1,0 +1,40 @@
+---
+title: Content page with top-right QS and GCDS
+description: Demo content page for the Canada.ca Search UI for QS using GCDS
+lang: en
+altLangPage: srb-fr.html
+layout: gcds
+dateModified: 2025-12-09
+breadcrumbs:
+- title: "GC Search UI"
+  link: "../index.html"
+css: "../src/connector.css"
+script:
+- src: "assets/token.js"
+- src: "../src/connector.js"
+  type: module
+---
+
+<!--FORM-->
+<form class="mrgn-tp-sm" role="search" hidden>
+	<div class="input-group mrgn-tp-lg">
+		<label class="wb-inv" for="sch-inp-ac">Search Government of Canada websites</label>
+		<input id="sch-inp-ac" class="form-control" value="" name="q" autocomplete="off" spellcheck="false" type="search" aria-describedby="gc-pi">
+		<span class="input-group-btn">
+		<button class="btn btn-primary btn-small" type="submit"> <span class="glyphicon-search glyphicon" aria-hidden="true"></span> <span class="wb-inv">Search</span> </button>
+		</span>
+	</div>
+	<p id="gc-pi" class="mrgn-tp-md">Don’t include personal information (telephone, email, SIN, financial, medical, or work details).</p>
+</form>
+
+<!--RESULTS-->
+<div data-gc-search='{
+	"searchHub": "canada-gouv-public-websites",
+	"organizationId": "employmentandsocialdevelopmentcanadanonproduction14o5d9wry",
+	"accessToken":"{{ site.data.token.API_KEY }}",
+	"originLevel3": "/en/sr/srb.html"
+}'></div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus feugiat aliquet massa, nec hendrerit ante gravida nec. Ut tristique metus pellentesque volutpat ultricies. Nunc sollicitudin tincidunt augue, eu hendrerit elit pharetra at. Aliquam erat volutpat. Cras in ex sodales, porta diam non, pretium nisi. Duis commodo molestie urna, ut aliquet dolor ornare non. Morbi eleifend eros est, id fringilla metus pharetra eu. Ut elementum interdum aliquet. Nam tincidunt convallis massa vitae fermentum. Phasellus volutpat nisi justo, tincidunt rhoncus leo pulvinar eu.</p>
+<p>In suscipit sagittis ante, pharetra posuere lacus fermentum eget. Mauris efficitur quam et augue iaculis, ac porta erat sollicitudin. Phasellus vitae dapibus dolor, vel maximus leo. Mauris semper quam velit, vel euismod mi sollicitudin tincidunt. Vivamus egestas nisi ac eros interdum ultricies. Aliquam sed lorem sed arcu aliquet tempor id a lacus. Vivamus ornare purus sit amet elementum vulputate. Phasellus tincidunt vehicula elit ut finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque commodo velit pretium lorem finibus, eget fringilla lectus pharetra. Donec nunc nisi, varius quis rutrum ut, tristique non nunc. In arcu velit, faucibus quis nisl eget, efficitur vestibulum mauris.</p>
+<p>Pellentesque quis venenatis ante. Ut scelerisque, ligula sed tempor bibendum, enim libero porta justo, in laoreet elit nisi ac lorem. Pellentesque lacinia tempus nulla, sit amet scelerisque tortor blandit laoreet. Integer vitae cursus nunc. Nam posuere non arcu ut ullamcorper. Vivamus pellentesque odio vitae diam semper, et dignissim lorem mollis. Donec at sapien pellentesque, molestie leo vel, rhoncus ligula. Aliquam hendrerit sollicitudin fermentum.</p>
+<p>Cras pellentesque fermentum accumsan. Curabitur scelerisque urna nec nisi euismod, et eleifend purus dignissim. Praesent id ornare dui. Nulla nec varius elit, et luctus odio. Quisque suscipit odio nisi, et euismod metus sodales non. Nulla aliquet quis mi in consequat. Vestibulum auctor urna non nibh faucibus venenatis. Donec nunc arcu, mollis non vestibulum ac, consequat sit amet dolor. Vivamus sem ligula, volutpat quis metus ut, maximus varius mi. Nulla egestas purus id augue egestas, ac interdum dolor gravida. Praesent ultrices facilisis magna nec posuere. Praesent at erat odio. Donec ac mauris lacus. In nec vestibulum sem. Proin vitae lacinia lorem. Duis congue dapibus sapien et consectetur.</p>
