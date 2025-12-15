@@ -8,7 +8,7 @@ pageclass: page-type-search
 pageType: recherche
 share: false
 deptfeature: false
-dateModified: 2024-06-05
+dateModified: 2025-12-15
 breadcrumbs:
 - title: "GC Search UI"
   link: "../index.html"
@@ -19,10 +19,15 @@ script:
   type: module
 ---
 
+<div class="wb-dismissable mt-1 mb-2 pl-3" role="alert">
+	<h3 class="h5 mt-1 mb-1"><span class="glyphicon glyphicon-hand-right mr-2" aria-hidden="true"></span> Before you test</h3>
+	<p class="mb-0 small">To properly test pages below, such as getting results back from the search engine, please make sure you <a href="../test/index.html">have a valid token</a>.</p>
+</div>
+
 <!--FORM-->
-<form class="mrgn-tp-sm" role="search">
+<form class="mrgn-tp-lg" role="search">
 	<div class="input-group mrgn-tp-lg">
-		<label class="wb-inv" for="sch-inp-ac">Search Government of Canada websites</label>
+		<label class="wb-inv" for="sch-inp-ac">Search Canada.ca (with Triggers)</label>
 		<input id="sch-inp-ac" class="form-control" value="" name="q" autocomplete="off" spellcheck="false" type="search" aria-describedby="gc-pi">
 		<span class="input-group-btn">
 		<button class="btn btn-primary btn-small" type="submit"> <span class="glyphicon-search glyphicon" aria-hidden="true"></span> <span class="wb-inv">Search</span> </button>
@@ -36,13 +41,6 @@ script:
 	"searchHub": "canada-gouv-public-websites",
 	"organizationId": "employmentandsocialdevelopmentcanadanonproduction14o5d9wry",
 	"accessToken":"{{ site.data.token.API_KEY }}",
-	"originLevel3": "/en/sr/srb.html"
+	"originLevel3": "/en/services/immigration-citizenship/search.html"
 }'></div>
 <p class="text-center small"><a href="sra-en.html">Perform an advanced search</a></p>
-
-<!--DEMO-EXPECTATIONS-->
-<h2>Expected output for the result section</h2>
-<details>
-	<summary>Output for Results section</summary>
-	[To be completed, see Connector.js for reference until then]
-</details>

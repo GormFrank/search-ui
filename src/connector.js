@@ -273,34 +273,11 @@ function initTpl() {
 	if ( !notificationTriggerTemplateHTML ) {
 		if ( lang === "fr" ) {
 			notificationTriggerTemplateHTML = 
-				`<section class="alert alert-info">
-					<h2>Notification</h2>
-					<p>%[notification]</p>
-				</section>`;
+				`<section class="alert alert-info">%[notification]</section>`;
 		}
 		else {
 			notificationTriggerTemplateHTML = 
-				`<section class="alert alert-info">
-					<h2>Notification</h2>
-					<p>%[notification]</p>
-				</section>`;
-		}
-	}
-
-	if ( !notificationTriggerTemplateHTML ) {
-		if ( lang === "fr" ) {
-			notificationTriggerTemplateHTML = 
-				`<section class="alert alert-info">
-					<h2>Notification</h2>
-					<p>%[notification]</p>
-				</section>`;
-		}
-		else {
-			notificationTriggerTemplateHTML = 
-				`<section class="alert alert-info">
-					<h2>Notification</h2>
-					<p>%[notification]</p>
-				</section>`;
+				`<section class="alert alert-info">%[notification]</section>`;
 		}
 	}
 
@@ -1314,7 +1291,7 @@ function updateNotifyTriggerState ( newState ) {
 	notificationState = newState;
 
 	if ( notificationState.notifications?.length ) {
-		notificationTriggerElement.innerHTML = notificationTriggerTemplateHTML.replace( "%[notification]", notificationState.notifications[0] );
+		notificationTriggerElement.innerHTML = notificationTriggerTemplateHTML.replace( DOMPurify.sanitize( "%[notification]" ), notificationState.notifications[0] );
 	}
 	else {
 		notificationTriggerElement.textContent = "";
