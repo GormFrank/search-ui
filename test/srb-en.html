@@ -46,3 +46,29 @@ script:
 	<summary>Output for Results section</summary>
 	[To be completed, see Connector.js for reference until then]
 </details>
+
+<script>
+const targetNode = document.querySelector("[data-gc-search]");
+const headerBreadcrumb = document.querySelector("#wb-bc .breadcrumb li").textContent;
+let observer;
+
+const callback = (mutationList, observer) => {
+  for (const mutation of mutationList) {
+	if(targetNode.querySelector("#result-list section")) {
+		if(mutation.addedNodes && mutation.addedNodes.length > 0) {
+			let elm = mutation.addedNodes[0];
+			
+			if(elm && elm.nodeType === Node.ELEMENT_NODE) {
+				let firstBreadcrumb = elm.querySelector(".location li");
+
+				firstBreadcrumb.textContent = headerBreadcrumb;
+			}
+		}
+	}
+  }
+};
+
+const config = { childList: true, subtree: true };
+observer = new MutationObserver(callback);
+observer.observe(targetNode, config);
+</script> 
